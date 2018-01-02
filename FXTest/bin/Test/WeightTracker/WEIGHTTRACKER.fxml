@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Test.WeightTracker.NewWeightTrackerController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="466.0" prefWidth="839.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #000099;">
+               <children>
+                  <GridPane prefHeight="466.0" prefWidth="246.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Fitness Buddy" textFill="WHITE" underline="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="System Bold" size="31.0" />
+                           </font>
+                        </Label>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goEnterFood" style="-fx-background-color: #000099;" text="Enter Food" textFill="WHITE" GridPane.rowIndex="1">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goEnterExercise" style="-fx-background-color: #000099;" text="Enter Exercise" textFill="WHITE" GridPane.rowIndex="2">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goDailyNutriInfo" style="-fx-background-color: #000099;" text="Daily Nutritional Information" textFill="WHITE" GridPane.rowIndex="3">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goWeightTracker" style="-fx-background-color: #0000cc;" text="Weight Tracker" textFill="WHITE" GridPane.rowIndex="4">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goNutriGoals" style="-fx-background-color: #000099;" text="Nutritional Goals" textFill="WHITE" GridPane.rowIndex="5">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goProfileInfo" style="-fx-background-color: #000099;" text="Profile Information" textFill="WHITE" GridPane.rowIndex="6">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goSignInPage" style="-fx-background-color: #000099;" text="Sign Out" textFill="WHITE" GridPane.rowIndex="7">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #00001a;">
+               <children>
+                  <LineChart fx:id="weightOverTimeChart" layoutY="14.0" legendVisible="false" prefHeight="395.0" prefWidth="585.0" style="-fx-background-color: #00001a;" title=" ">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="x" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="y" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <DatePicker fx:id="date" layoutX="118.0" layoutY="419.0" prefHeight="25.0" prefWidth="119.0" />
+                  <Label layoutX="14.0" layoutY="418.0" text="Select Date: " textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="weightTextField" layoutX="318.0" layoutY="419.0" prefHeight="25.0" prefWidth="119.0" promptText="lbs" style="-fx-background-color: #ccccff;" />
+                  <Label layoutX="250.0" layoutY="418.0" text="Weight:" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="updateGraphButton" layoutX="461.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#submitWeightDataPoint" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8080ff;" text="Submit" textFill="WHITE" />
+                  <Label layoutX="177.0" layoutY="14.0" text="Weight Over Time" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
